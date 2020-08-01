@@ -1,0 +1,11 @@
+version: '3'
+services:
+  nodeapp:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app/myproj
+      - /app/myproj/node_modules
+  redis:
+    image: redis

@@ -1,0 +1,8 @@
+---
+
+- hosts: myec2client1
+  become : yes
+  tasks:
+    - shell : whoami    
+    - name : print uname
+      command : uname -a

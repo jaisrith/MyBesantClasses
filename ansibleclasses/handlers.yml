@@ -1,0 +1,11 @@
+---
+
+- hosts: myclients
+  become: yes
+  tasks:
+    - name: install webserver
+      yum: name=httpd state=latest
+      notify: start webserver
+  handlers:
+    - name: start webserver
+      service: name=httpd enabled=yes state=started

@@ -1,0 +1,11 @@
+---
+
+- hosts: myclients
+  vars:
+    - var1: Hello
+  tasks:
+    - name: echo
+      command: echo -e "{{ var1 }} Mohan\n{{var1}} raghav\n{{var1}} everyone"
+      register: result
+    - name: debugging
+      debug: msg={{result.stdout_lines}}

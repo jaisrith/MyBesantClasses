@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  nodeapp:
+    restart: "always"
+    build: .
+    ports:
+      - "8080:8080"
+  myredis:
+    image: 'redis'

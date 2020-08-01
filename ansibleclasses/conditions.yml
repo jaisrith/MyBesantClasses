@@ -1,0 +1,11 @@
+---
+
+- hosts: myclients
+  become: yes
+  tasks:
+    - name: install webserver
+      apt: name=httpd state=latest
+      when: ansible_os_family == 'Debian'
+    - name: conditional
+      yum: name=httpd state=absent
+      when: ansible_os_family == 'RedHat'
